@@ -11,7 +11,8 @@ const discountAmount = (rawSubtotal * comboDiscountPercent) / 100;
 const foodTotalAfterDiscount = rawSubtotal - discountAmount;
 
 // 2. Tính cước vận chuyển (16.000đ cơ bản + 4.000đ/km) - Đang phát sinh lỗi nối chuỗi
-const deliveryFee = rawBaseDeliveryFee + rawDeliveryDistance * 4000;
+const deliveryFee =
+  Number(rawBaseDeliveryFee) + Number(rawDeliveryDistance) * 4000;
 
 // 3. Quyết toán hóa đơn thanh toán
 const finalPayment = foodTotalAfterDiscount + deliveryFee;
